@@ -39,7 +39,7 @@ function unsubObservable(Observer) {
     }
   }, 100);
   return () => {
-    Observer.complete();
+    console.log("disposed!");
     clearInterval(id);
   };
 }
