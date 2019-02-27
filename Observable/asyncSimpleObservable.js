@@ -3,11 +3,12 @@
 //不阻塞程序
 
 function Observable(Observer) {
-  setTimeout(() => {
+  let id = setTimeout(() => {
     for (let i = 0; i < 10; i++) {
       Observer.next(i);
     }
     Observer.complete();
+    clearTimeout(id);
   }, 0);
 }
 const Observer = {
