@@ -43,6 +43,7 @@ const Observer = {
 function unsubObservable(Observer) {
   //安全的
   let safeObserver = new SafeObserver(Observer);
+  console.log(safeObserver);
   let i = 0;
 
   const id = setInterval(() => {
@@ -52,11 +53,11 @@ function unsubObservable(Observer) {
       safeObserver.complete();
       clearInterval(id);
     }
-  }, 100);
+  }, 1000);
   return () => {
     console.log("disposed!");
     clearInterval(id);
   };
 }
 let unsub = unsubObservable(Observer);
-setTimeout(unsub, 500);
+setTimeout(unsub, 5000);
