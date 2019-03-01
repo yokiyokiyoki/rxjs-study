@@ -1,2 +1,2 @@
-import { Observable } from "rxjs";
+const { Observable } = rxjs;
 console.log(Observable);
