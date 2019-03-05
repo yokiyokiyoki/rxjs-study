@@ -1,4 +1,5 @@
 # 开始
+> 基于rxjs v6
 
 - npm i
 - npm start
