@@ -25,3 +25,20 @@ function makeHot(cold){
     cold.subscribe(subject)
     return new Observable((observer) => subject.subscribe(observer));
 }
+//如果取消订阅，当所有观察者都取消订阅的时候，应该也取消cold的订阅。使用引用计数法
+function makeHott(cold){
+    const subject=new subject()
+    let mainCold=cold.subscribe(subject)
+    let ref=0
+    return new Observable((observer) => {
+        let sub=subject.subscribe(observer)
+        ref++
+        return ()=>{
+            ref--
+            if(ref==0){
+                mainCold.unsubscribe()
+            }
+            sub.unsubscribe()
+        }
+    });
+}
