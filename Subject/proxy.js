@@ -1,6 +1,9 @@
+/** 
+ * 演示的是桥接代理模式
+*/
 const { Observable, interval, Subject } = rxjs;
 
-console.log(Observable, interval, Subject);
+// console.log(Observable, interval, Subject);
 const interval$ = interval(1000);
 
 /**
