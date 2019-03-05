@@ -82,3 +82,36 @@ class MyBehaviorSubject extends Rx.Observable{
 //     console.log(value);
 //   });
 // }, 2000);
+
+
+
+
+/** 
+ * ReplaySubject的简单构建
+ * 传入一个返回最近几次的数字buffersize
+*/
+
+// class MyReplaySubject extends Rx.Observable {
+
+//     constructor(bufferSize) {
+//         super();
+//         this.observers = [];
+//         this.bufferSize = bufferSize;
+//         this.lastValues = [];
+//     }
+
+//     subscribe(observer) {
+//         this.lastValues.forEach(val => observer.next(val));
+//         this.observers.push(observer);
+//     }
+
+//     next(value) {
+            // 如果相等则去掉头部，push进新的
+//         if (this.lastValues.length === this.bufferSize) {
+//         this.lastValues.shift();
+//         }
+
+//         this.lastValues.push(value);
+//         this.observers.forEach(observer => observer.next(value));
+//     }
+// }
