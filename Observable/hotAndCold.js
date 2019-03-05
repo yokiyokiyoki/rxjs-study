@@ -19,6 +19,7 @@
 /** 
  * 将现有冷的observerable变成热的，其实就是利用subject
  * 桥接代理模式
+ * rxjs使用 publish 或 share（引用计数法）
 */
 function makeHot(cold){
     const subject=new subject()
