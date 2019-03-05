@@ -7,7 +7,7 @@ const { Observable, interval, Subject } = rxjs;
 const interval$ = interval(1000);
 
 /**
- * 两个观察者获得的是不一样事件
+ * 两个观察者获得的是不一样事件，这种就叫单播
  */
 // interval$.subscribe(v => {
 //   console.log(`${v}`);
@@ -20,7 +20,7 @@ const interval$ = interval(1000);
 // }, 2000);
 
 /**
- * 两个观察者获得的是相同事件
+ * 两个观察者获得的是相同事件，这种就叫多播
  * subject桥接代理
  */
 const subject = new Subject();
