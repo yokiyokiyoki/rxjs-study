@@ -28,6 +28,7 @@ const source = defer(() => of(
    * multicast也能使冷的变成热的
    * 返回ConnectableObservable
    * 具有connect方法
+   * 
   */
  //简单实现
 //  function multicast(source) {
@@ -48,3 +49,5 @@ const m = source.pipe(multicast(new Subject()));
 m.subscribe(observer("a"));
 m.subscribe(observer("b"));
 m.connect();
+//调用connect方法才会调用
+
